@@ -6,12 +6,12 @@ import android.widget.TextView;
 
 public class MessageViewHolder extends RecyclerView.ViewHolder {
 
-    public final TextView textView;
+    private TextView messageTextView;
 
     public MessageViewHolder(final View itemView, final OnMessageClickListener listener) {
         super(itemView);
-        textView = (TextView) itemView.findViewById(R.id.text_view);
-        itemView.setOnClickListener(new View.OnClickListener() {
+        messageTextView = (TextView) itemView.findViewById(R.id.text_view);
+        messageTextView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(final View view) {
                 listener.onMessageClick(getAdapterPosition());
@@ -19,5 +19,7 @@ public class MessageViewHolder extends RecyclerView.ViewHolder {
         });
     }
 
-
+    public TextView getMessageTextView() {
+        return messageTextView;
+    }
 }

@@ -2,5 +2,5 @@ package pl.droidsonroids.czatexample;
 
 public interface OnMessageClickListener {
 
-    void onMessageClick(int position);
+    void onMessageClick(final int position);
 }
